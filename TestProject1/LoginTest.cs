@@ -7,29 +7,18 @@ using OpenQA.Selenium.Remote;
 
 namespace TestProject1
 {
-    public class Tests
+    public class LoginTest
     {
         private AndroidDriver<AndroidElement> driver;
 
         [SetUp]
         public void Setup()
         {
-            AppiumOptions caps = new AppiumOptions();
-            caps.AddAdditionalCapability(MobileCapabilityType.BrowserName, "");
-            caps.AddAdditionalCapability(MobileCapabilityType.PlatformName, App.AndroidDeviceName());
-            caps.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, App.AndroidPlatformVersion());
-            caps.AddAdditionalCapability(MobileCapabilityType.AutomationName, "UIAutomator2");
-            caps.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Pixel 2 API 30");
-            //caps.AddAdditionalCapability("appActivity", ".app.SearchInvoke");
-            caps.AddAdditionalCapability("appActivity", "br.coop.cecred.cecredmobile.splash.SplashActivity");
-            caps.AddAdditionalCapability(MobileCapabilityType.App, App.AndroidApp());
-
-            driver = new AndroidDriver<AndroidElement>(Env.ServerUri(), caps, Env.INIT_TIMEOUT_SEC);
-            driver.Manage().Timeouts().ImplicitWait = Env.IMPLICIT_TIMEOUT_SEC;
+            driver = DriverManager.Instance().Driver;
         }
 
         [Test]
-        public void Test1()
+        public void ShouldTestLoginApp()
         {
             driver.FindElementById("btn_access_account").Click();
 
