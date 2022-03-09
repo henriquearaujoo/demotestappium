@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestProject1.Android;
 
 namespace TestProject1
 {
@@ -24,6 +25,7 @@ namespace TestProject1
             caps.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, App.AndroidPlatformVersion());
             caps.AddAdditionalCapability(MobileCapabilityType.AutomationName, "UIAutomator2");
             caps.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Pixel 2 API 30");
+            caps.AddAdditionalCapability("autoGrantPermissions", "true");
             //caps.AddAdditionalCapability("appActivity", ".app.SearchInvoke");
             caps.AddAdditionalCapability("appActivity", "br.coop.cecred.cecredmobile.splash.SplashActivity");
             caps.AddAdditionalCapability(MobileCapabilityType.App, App.AndroidApp());

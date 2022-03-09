@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestProject1
+namespace TestProject1.Android
 {
-    public class PixMenuTest
+    public class BPixMenuTest
     {
         private AndroidDriver<AndroidElement> driver;
 
@@ -22,6 +22,8 @@ namespace TestProject1
         public void ShouldTestPixMenu()
         {
             driver.FindElementById("menu_pix").Click();
+
+            driver.FindElementById("button_confirm").Click();
         }
     }
 }

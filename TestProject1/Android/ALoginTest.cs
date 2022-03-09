@@ -7,7 +7,7 @@ using OpenQA.Selenium.Remote;
 
 namespace TestProject1
 {
-    public class LoginTest
+    public class ALoginTest
     {
         private AndroidDriver<AndroidElement> driver;
 
