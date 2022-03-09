@@ -2,6 +2,7 @@ using NUnit.Framework;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
+using OpenQA.Selenium.Appium.iOS;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 
@@ -9,12 +10,14 @@ namespace TestProject1
 {
     public class ALoginTest
     {
-        private AndroidDriver<AndroidElement> driver;
+        //private AndroidDriver<AndroidElement> driver;
+        private IOSDriver<IOSElement> driver;
 
         [SetUp]
         public void Setup()
         {
-            driver = DriverManager.Instance().Driver;
+            //driver = DriverAndroid.Instance().Driver;
+            driver = DriverIOS.Instance().Driver;
         }
 
         [Test]

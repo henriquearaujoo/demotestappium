@@ -15,7 +15,7 @@ namespace TestProject1.Android
         [SetUp]
         public void Setup()
         {
-            driver = DriverManager.Instance().Driver;
+            driver = DriverAndroid.Instance().Driver;
         }
 
         [Test]

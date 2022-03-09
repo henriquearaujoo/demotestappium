@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
 using OpenQA.Selenium.Appium.iOS;
 using System;
@@ -6,17 +7,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestProject1.Android;
 
-namespace TestProject1.iOS
+namespace TestProject1
 {
-    public class DriverManager
+    public class DriverIOS
     {
         private IOSDriver<IOSElement> driver;
-        static DriverManager instance;
+        static DriverIOS instance;
 
         public IOSDriver<IOSElement> Driver { get => driver; private set => driver = value; }
 
-        protected DriverManager()
+        protected DriverIOS()
         {
             AppiumOptions caps = new AppiumOptions();
             caps.AddAdditionalCapability(MobileCapabilityType.BrowserName, "");
@@ -31,10 +33,10 @@ namespace TestProject1.iOS
             driver.Manage().Timeouts().ImplicitWait = Env.IMPLICIT_TIMEOUT_SEC;
         }
 
-        public static DriverManager Instance()
+        public static DriverIOS Instance()
         {
-            if (instance is null)
-                instance = new DriverManager();
+            if (instance is null) 
+                instance = new DriverIOS();
 
             return instance;
         }

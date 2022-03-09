@@ -10,14 +10,14 @@ using TestProject1.Android;
 
 namespace TestProject1
 {
-    public class DriverManager
+    public class DriverAndroid
     {
         private AndroidDriver<AndroidElement> driver;
-        static DriverManager instance;
+        static DriverAndroid instance;
 
         public AndroidDriver<AndroidElement> Driver { get => driver; private set => driver = value; }
 
-        protected DriverManager()
+        protected DriverAndroid()
         {
             AppiumOptions caps = new AppiumOptions();
             caps.AddAdditionalCapability(MobileCapabilityType.BrowserName, "");
@@ -34,10 +34,10 @@ namespace TestProject1
             driver.Manage().Timeouts().ImplicitWait = Env.IMPLICIT_TIMEOUT_SEC;
         }
 
-        public static DriverManager Instance()
+        public static DriverAndroid Instance()
         {
             if (instance is null) 
-                instance = new DriverManager();
+                instance = new DriverAndroid();
 
             return instance;
         }
