@@ -21,11 +21,11 @@ namespace TestProject1.iOS
             AppiumOptions caps = new AppiumOptions();
             caps.AddAdditionalCapability(MobileCapabilityType.BrowserName, "");
             caps.AddAdditionalCapability(MobileCapabilityType.PlatformName, "iOS");
-            caps.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "14.4");
+            caps.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, App.IOSPlatformVersion());
             caps.AddAdditionalCapability(MobileCapabilityType.AutomationName, "XCUITest");
-            caps.AddAdditionalCapability(MobileCapabilityType.DeviceName, "iPhone 12 Pro Max");
+            caps.AddAdditionalCapability(MobileCapabilityType.DeviceName, App.IOSDeviceName());
+            caps.AddAdditionalCapability(MobileCapabilityType.App, App.IOSApp());
             caps.AddAdditionalCapability("autoGrantPermissions", "true");
-            caps.AddAdditionalCapability(MobileCapabilityType.App, "");
 
             driver = new IOSDriver<IOSElement>(Env.ServerUri(), caps, Env.INIT_TIMEOUT_SEC);
             driver.Manage().Timeouts().ImplicitWait = Env.IMPLICIT_TIMEOUT_SEC;

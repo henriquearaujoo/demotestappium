@@ -46,5 +46,20 @@ namespace TestProject1
         {
             return Environment.GetEnvironmentVariable("ANDROID_PLATFORM_VERSION") ?? "11.0";
         }
+
+        static public String IOSApp()
+        {
+            return Env.IsSauce() ? "http://appium.github.io/appium/assets/TestApp7.1.app.zip" : $"{Env.rootDirectory}/apps/TestApp.app.zip";
+        }
+
+        static public String IOSDeviceName()
+        {
+            return Environment.GetEnvironmentVariable("IOS_DEVICE_NAME") ?? "iPhone 6s";
+        }
+
+        static public String IOSPlatformVersion()
+        {
+            return Environment.GetEnvironmentVariable("IOS_PLATFORM_VERSION") ?? "11.4";
+        }
     }
 }
